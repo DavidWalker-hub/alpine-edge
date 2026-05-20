@@ -8,10 +8,12 @@ export const siteConfig = {
   lang: "en",
   locale: "en_GB",
   author: "David Walker",
+  twitter: "@N/A",
   ogImage: ogImage,
   socialLinks: {
     twitter: "https://twitter.com",
     github: "https://github.com/DavidWalker-hub/alpine-edge",
+    discord: "https://discord.com",
   },
   navLinks: [
     { text: "Home", href: "/" },
