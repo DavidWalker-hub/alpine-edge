@@ -1,19 +1,17 @@
 import ogImage from "@/assets/og-image.png";
 
 export const siteConfig = {
-  name: "Astro Starter Pro",
+  name: "Alpine Edge",
   description:
-    "Starter template optimized for SEO and performance. A solid foundation to start your projects with best practices.",
-  url: "https://astrostarterpro.com",
+    "An astro website for an exclusive luxury ski retreat company called Alpine Edge",
+  url: "https://alpineedge.com",
   lang: "en",
-  locale: "en_US",
-  author: "Devgelo",
-  twitter: "@Devgelo",
+  locale: "en_GB",
+  author: "David Walker",
   ogImage: ogImage,
   socialLinks: {
     twitter: "https://twitter.com",
-    github: "https://github.com/devgelo-labs/astro-starter-pro",
-    discord: "https://discord.com",
+    github: "https://github.com/DavidWalker-hub/alpine-edge",
   },
   navLinks: [
     { text: "Home", href: "/" },
