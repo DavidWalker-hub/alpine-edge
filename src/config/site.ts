@@ -3,7 +3,7 @@ import ogImage from "@/assets/og-image.png";
 export const siteConfig = {
   name: "Alpine Edge",
   description:
-    "An astro website for an exclusive luxury ski retreat company called Alpine Edge",
+    "Alpine edge is an exclusive luxury ski retreat in the French Alps.",
   url: "https://alpineedge.com",
   lang: "en",
   locale: "en_GB",

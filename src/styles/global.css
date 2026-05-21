@@ -16,7 +16,8 @@
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
-  --primary: #0254d8;
+  /* --primary: #0254d8; */
+  --primary: #ff3131;
   --border: #e5e7eb;
   --muted: #f4f4f5;
   --muted-foreground: #52525b;
@@ -26,7 +27,9 @@
 :root[data-theme="dark"] {
   --background: #030303;
   --foreground: #e5e7eb;
-  --primary: #8bbcff;
+  --primary: #ff3131;
+
+  /* --primary: #8bbcff; */
   --border: #262626;
   --muted: #171717;
   --muted-foreground: #a1a1aa;

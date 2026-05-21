@@ -12,7 +12,7 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
     <div class="flex items-center gap-2">
       <a
         href="/"
-        class="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-primary"
+        class="text-xl font-bold tracking-tight text-primary transition-colors hover:text-primary"
       >
         {siteConfig.name}
       </a>
@@ -35,14 +35,14 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
     </div>
 
     <div class="hidden md:flex items-center gap-4">
-      <a
+      <!-- <a
         href={siteConfig.socialLinks.github}
         target="_blank"
         rel="noopener noreferrer"
         class="rounded-full bg-foreground/10 px-4 py-2 text-sm font-semibold text-foreground transition-all hover:bg-foreground/20"
       >
         GitHub
-      </a>
+      </a> -->
       <ThemeToggle />
     </div>
 
