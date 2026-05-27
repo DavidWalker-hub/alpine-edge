@@ -3,7 +3,7 @@ import ogImage from "@/assets/og-image.png";
 export const siteConfig = {
   name: "Alpine Edge",
   description:
-    "Alpine edge is an exclusive luxury ski retreat in the French Alps.",
+    "A luxury ski and wellness retreat designed to take your skills to the next level.",
   url: "https://alpineedge.com",
   lang: "en",
   locale: "en_GB",

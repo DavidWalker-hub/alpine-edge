@@ -1,6 +1,8 @@
 ---
 import { siteConfig } from "@/config/site";
 import ThemeToggle from "@/components/ui/ThemeToggle.astro";
+// import { Image } from "astro:assets";
+// import aELogo from "@/assets/images/aELogo.jpg";
 ---
 
 <nav
@@ -15,6 +17,7 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
         class="text-xl font-bold tracking-tight text-primary transition-colors hover:text-primary"
       >
         {siteConfig.name}
+        <!-- <Image src={aELogo} alt={`${siteConfig.name} logo`} width={64} class="inline-block ml-2" /> -->
       </a>
     </div>
 
@@ -51,7 +54,7 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
       <button
         id="mobile-menu-button"
         type="button"
-        class="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-white hover:bg-white/10 focus:outline-none transition-colors"
+        class="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:bg-foreground/10 focus:outline-none transition-colors"
         aria-controls="mobile-menu"
         aria-expanded="false"
       >
@@ -101,18 +104,18 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
         siteConfig.navLinks.map((link) => (
           <a
             href={link.href}
-            class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-white/10 hover:text-primary"
+            class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-foreground/10 hover:text-primary"
           >
             {link.text}
           </a>
         ))
       }
-      <a
+      <!-- <a
         href={siteConfig.socialLinks.github}
         target="_blank"
         class="block rounded-md px-3 py-2 text-base font-medium text-blue-400 transition-colors hover:cursor-pointer hover:bg-blue-500/10 hover:text-blue-300"
         >GitHub</a
-      >
+      > -->
     </div>
   </div>
 </nav>
