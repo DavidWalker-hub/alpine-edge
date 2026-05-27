@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site";
 import Hero from "@/components/widgets/Hero.astro";
 import Features from "@/components/widgets/Features.astro";
 import devImg from "@/assets/images/dev_balanced.png";
+import carvingImg from "@/assets/images/skiing/carving2DW.jpg";
 import openSourceImg from "@/assets/images/open-source.png";
 import Content2 from "@/components/widgets/Content2.astro";
 import powderSprayImage from "@/assets/images/powderSpray.jpg";
@@ -27,21 +28,6 @@ const metadata = {
       container:
         "-mt-5 -mb-60 sm:mt-20 md:-mt-20 md:-mb-50 lg:-mt-20 lg:mb-0 xl:mb-70",
     }}
-    actions={[
-      // {
-      //   text: "Get Started",
-      //   href: "https://github.com/devgelo-labs/astro-starter-pro",
-      //   variant: "primary",
-      //   // icon: "lucide:github",
-      // },
-      // {
-      //   text: "Our Services",
-      //   href: "/services",
-      //   variant: "secondary",
-      //   icon: "lucide:arrow-right",
-      //   ariaLabel: "Learn more about our services",
-      // },
-    ]}
   />
   <Features
     tagline="About us"
@@ -49,23 +35,24 @@ const metadata = {
     subtitle="Alpine Edge is designed for skiers seeking to take their skiing to the highest level."
     features={[
       {
-        title: "Ski clinic",
+        title: "Ski clinics",
         description:
           "Professional ski instruction from instructors with the highest certification.",
-        icon: "lucide:scan-search",
+        icon: "hugeicons:ski",
         iconClass: "bg-blue-500/10 text-blue-400",
       },
       {
-        title: "High Performance",
-        description: "Lightweight structure for fast load times.",
-        icon: "lucide:zap",
+        title: "Luxury accommodation",
+        description:
+          "Stay in the most luxurious chalets complete with spa and gourmet dining.",
+        icon: "hugeicons:house-03",
         iconClass: "bg-purple-500/10 text-purple-400",
       },
       {
-        title: "Tailwind v4",
+        title: "Apres ski",
         description:
-          "Integrated configuration with the latest version of Tailwind CSS.",
-        icon: "lucide:palette",
+          "Apres ski designed to maximise your performance includes video feedback sessions, sauna & ice bath and stretching.",
+        icon: "hugeicons:wellness",
         iconClass: "bg-pink-500/10 text-pink-400",
       },
     ]}
@@ -93,8 +80,8 @@ const metadata = {
         iconClass: "bg-pink-500/10 text-pink-400",
       },
     ]}
-    image={devImg}
-    imageAlt="Development"
+    image={carvingImg}
+    imageAlt="Image of a skier carving a turn in the snow, showcasing precision and control."
   >
     <Fragment>
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
