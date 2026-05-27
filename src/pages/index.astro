@@ -6,6 +6,7 @@ import Features from "@/components/widgets/Features.astro";
 import devImg from "@/assets/images/dev_balanced.png";
 import openSourceImg from "@/assets/images/open-source.png";
 import Content2 from "@/components/widgets/Content2.astro";
+import powderSprayImage from "@/assets/images/powderSpray.jpg";
 const metadata = {
   title: `${siteConfig.name} — The next step for your project`,
   description:
@@ -15,35 +16,42 @@ const metadata = {
 ---
 
 <BaseLayout {metadata}>
+  <!-- <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Edge</span> -->
   <Hero
-    title={`Starter Template for <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Web Developers</span>`}
-    tagline="Astro v5 + Tailwind v4"
-    description={`${siteConfig.description}`}
+    title={`<span class="text-primary">Alpine Edge</span> 
+    `}
+    description={`<span class="text-secondary">${siteConfig.description}</span>`}
+    image={powderSprayImage}
+    imageAlt="landinng page hero image of a skier spraying powder"
+    classes={{
+      container:
+        "-mt-5 -mb-60 sm:mt-20 md:-mt-20 md:-mb-50 lg:-mt-20 lg:mb-0 xl:mb-70",
+    }}
     actions={[
-      {
-        text: "Get Started",
-        href: "https://github.com/devgelo-labs/astro-starter-pro",
-        variant: "primary",
-        icon: "lucide:github",
-      },
-      {
-        text: "Our Services",
-        href: "/services",
-        variant: "secondary",
-        icon: "lucide:arrow-right",
-        ariaLabel: "Learn more about our services",
-      },
+      // {
+      //   text: "Get Started",
+      //   href: "https://github.com/devgelo-labs/astro-starter-pro",
+      //   variant: "primary",
+      //   // icon: "lucide:github",
+      // },
+      // {
+      //   text: "Our Services",
+      //   href: "/services",
+      //   variant: "secondary",
+      //   icon: "lucide:arrow-right",
+      //   ariaLabel: "Learn more about our services",
+      // },
     ]}
   />
   <Features
-    tagline="Features"
-    title="What's Included"
-    subtitle="A selection of tools and configurations to streamline your workflow."
+    tagline="About us"
+    title="What is Alpine Edge?"
+    subtitle="Alpine Edge is designed for skiers seeking to take their skiing to the highest level."
     features={[
       {
-        title: "Optimized SEO",
+        title: "Ski clinic",
         description:
-          "Base configuration for Meta tags, Open Graph, and Sitemap generation.",
+          "Professional ski instruction from instructors with the highest certification.",
         icon: "lucide:scan-search",
         iconClass: "bg-blue-500/10 text-blue-400",
       },
