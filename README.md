@@ -1,4 +1,4 @@
-# 🚀 Astro Starter Pro
+<!-- # 🚀 Astro Starter Pro
 
 **Astro Starter Pro** is a professional, open-source template for building fast websites using **[Astro 5](https://astro.build/) + [Tailwind CSS 4](https://tailwindcss.com/)**. Designed with industry best practices, optimized SEO, and a modern development experience.
 
@@ -201,4 +201,4 @@ For more details, please check our [Contributing Guide](./CONTRIBUTING.md).
 
 ---
 
-Designed by [Devgelo Labs](https://github.com/devgelo-labs)
+Designed by [Devgelo Labs](https://github.com/devgelo-labs) -->
