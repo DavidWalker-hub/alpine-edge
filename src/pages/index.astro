@@ -8,6 +8,7 @@ import carvingImg from "@/assets/images/skiing/carving2DW.jpg";
 import openSourceImg from "@/assets/images/open-source.png";
 import Content2 from "@/components/widgets/Content2.astro";
 import powderSprayImage from "@/assets/images/powderSpray.jpg";
+import accom1 from "@/assets/images/accom/accom1.webp";
 const metadata = {
   title: `${siteConfig.name} — The next step for your project`,
   description:
@@ -32,7 +33,7 @@ const metadata = {
   <Features
     tagline="About us"
     title="What is Alpine Edge?"
-    subtitle="Alpine Edge is designed for skiers seeking to take their skiing to the highest level."
+    subtitle="Alpine Edge is designed for people seeking to take their skiing to the highest level."
     features={[
       {
         title: "Ski clinics",
@@ -46,7 +47,7 @@ const metadata = {
         description:
           "Stay in the most luxurious chalets complete with spa and gourmet dining.",
         icon: "hugeicons:house-03",
-        iconClass: "bg-purple-500/10 text-purple-400",
+        iconClass: "bg-teal-500/10 text-teal-400",
       },
       {
         title: "Apres ski",
@@ -60,23 +61,24 @@ const metadata = {
   <Content2
     items={[
       {
-        title: "Responsive Design",
+        title: "Coaches",
         description:
-          "Base configuration for Meta tags, Open Graph, and Sitemap generation.",
-        icon: "lucide:scan-search",
+          "Our coaches have obtained the highest level of ski instruction through the BASI system. With over two decades of combined experience, they have honed their skills and are passionate about sharing their knowledge.",
+        icon: "hugeicons:ski",
         iconClass: "bg-blue-500/10 text-blue-400",
       },
       {
-        title: "High Performance",
-        description: "Lightweight structure for fast load times.",
-        icon: "lucide:zap",
-        iconClass: "bg-purple-500/10 text-purple-400",
+        title: "Groups",
+        description:
+          "With a maximum of 5 in a group, you will receive personalised instruction tailored to your needs and plenty of time to practice.",
+        icon: "hugeicons:user-group",
+        iconClass: "bg-teal-500/10 text-teal-400",
       },
       {
-        title: "Tailwind v4",
+        title: "Off mountain activities",
         description:
-          "Integrated configuration with the latest version of Tailwind CSS.",
-        icon: "lucide:palette",
+          "After a day on the slopes, we focus on recovery and preparation for the next day. Video analysis sessions ensure everyone has a complete understanding of the techniques covered, while our spa facilities including sauna and ice bath help you recover and prepare for the next day. We also include stretching sessions to improve flexibility, promote recovery and prevent injury.",
+        icon: "hugeicons:wellness",
         iconClass: "bg-pink-500/10 text-pink-400",
       },
     ]}
@@ -85,45 +87,45 @@ const metadata = {
   >
     <Fragment>
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Development
+        Improve your skiing
       </h3>
-      We provide a solid foundation to start your projects with best practices.
+      Every aspect of Alpine Edge is carefully curated to help you reach your potential.
     </Fragment>
   </Content2>
   <Content2
     items={[
       {
-        title: "Open Source",
+        title: "Rooms",
         description:
-          "Developed under the MIT license, free for personal and commercial use.",
-        icon: "lucide:github",
+          "We offer a variety of packages allowing you to choose from a private room or to share. All maintain the same high standard of comfort and luxury with a gorgeous mountain view",
+        icon: "hugeicons:bed-double",
         iconClass: "bg-indigo-500/10 text-indigo-400",
       },
       {
-        title: "Community Driven",
+        title: "Chef",
         description:
-          "Built with the feedback and contributions of the developer community.",
-        icon: "lucide:users",
-        iconClass: "bg-orange-500/10 text-orange-400",
-      },
-      {
-        title: "Regular Updates",
-        description:
-          "Continuously improved with the latest technologies and best practices.",
-        icon: "lucide:refresh-cw",
+          "A private chef will prepare delicious meals to fuel your day on the mountain. We cater to all dietary requirements and preferences, ensuring you have the energy you need to perform at your best.",
+        icon: "hugeicons:chef",
         iconClass: "bg-teal-500/10 text-teal-400",
       },
+      {
+        title: "Spa",
+        description:
+          "After a day on the mountain, relax and unwind in the spa, or enjoy the stunning mountain views from the outdoor hot tub.",
+        icon: "hugeicons:wellness",
+        iconClass: "bg-pink-500/10 text-pink-400",
+      },
     ]}
-    image={openSourceImg}
+    image={accom1}
     imageAlt="Community and Open Source"
     isReversed={true}
   >
     <Fragment>
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Open Source & Community
+        Accommodation
       </h3>
-      Join the revolution of modern web development. This project is open for everyone
-      to use, learn from, and contribute to.
+      Stay in the most luxurious chalets chosen to provide the perfect environment
+      for relaxation and recovery.
     </Fragment>
   </Content2>
 </BaseLayout>
