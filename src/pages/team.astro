@@ -1,0 +1,46 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Content from "@/components/widgets/Content.astro";
+import Content2 from "@/components/widgets/Content2.astro";
+import hudson from "@/assets/images/skiing/hudson.jpg";
+import walker from "@/assets/images/skiing/walker.jpg";
+
+const metadata = {
+  title: "Meet the Team",
+  description:
+    "Get to know the passionate individuals behind Alpine Edge, who will be your coaches and hosts during your ski retreat experience.",
+};
+---
+
+<BaseLayout {metadata}>
+  <Content
+    tagline="Team"
+    title="Meet The Team"
+    description={[
+      "Get to know the passionate individuals behind Alpine Edge, who will be your coaches and hosts during your ski retreat experience.",
+    ]}
+  />
+  <Content2
+    title="Dave Hudson"
+    description={[
+      "Dave is a BASI Level 4 (ISTD) instructor with more than ten years of experience in Val d’Isère.",
+      "With a deep commitment to skiing, teaching, and physical wellbeing, he combines on-snow coaching with off-snow insights to support long-term progression.",
+      "Dave looks forward to helping you take your skiing to the next level.",
+    ]}
+    image={hudson}
+    imageAlt="Picture of ski instructor Dave Hudson standing in front of a mountain backdrop in Val d'Isere, France"
+    classes={{ container: "pt-0 md:pt-0", title: "text-primary" }}
+  />
+  <Content2
+    isReversed={true}
+    title="Dave Walker"
+    description={[
+      "Dave W is a BASI level 4 (ISTD) qualified instructor with 20 winter seasons of international teaching experience.",
+      "His career spans world-class resorts such as Courchevel, Verbier, Thredbo (Australia), and Val d’isere, where he has taught for the past 7 years.",
+      "With a strong background in high-performance coaching- working with ski racers through to instructor training programmes. Dave is proud to bring his depth of knowledge and passion to the Alpine Edge project.",
+    ]}
+    image={walker}
+    imageAlt="Picture of ski instructor Dave Walker standing in front of a mountain backdrop in Val d'Isere, France"
+    classes={{ container: "pt-0 md:pt-0", title: "text-primary" }}
+  />
+</BaseLayout>
