@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-// import { getImage } from "astro:assets";
 import Content2 from "@/components/widgets/Content2.astro";
 import Values from "@/components/widgets/Values.astro";
 import teamImage from "@/assets/images/skiing/teamImage.jpg";
@@ -33,17 +32,11 @@ const values = [
       "Our passion for skiing and commitment to our guests' success drives everything we do at Alpine Edge.",
   },
 ];
-
-// const optimizedImage = await getImage({
-//   src: teamImage,
-//   format: "jpg",
-// });
 ---
 
 <BaseLayout {metadata}>
-  <!-- <link slot="head" rel="preload" href={optimizedImage.src} as="image" /> -->
   <Content2
-    title="Who we are"
+    title="Who We Are"
     description={[
       "Alpine Edge is a new and distinctive ski performance retreat, redefining the traditional ski camp into a refined luxury experience, hosted in the world-class resort of Val d’Isère.",
       "Designed for skiers seeking progression of the highest level, Alpine Edge blends elite coaching with exceptional comfort and care.",
