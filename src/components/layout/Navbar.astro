@@ -1,8 +1,8 @@
 ---
 import { siteConfig } from "@/config/site";
 import ThemeToggle from "@/components/ui/ThemeToggle.astro";
-// import { Image } from "astro:assets";
-// import aELogo from "@/assets/aELogo2.png";
+import { Image } from "astro:assets";
+import aELogo from "@/assets/aELogo.png";
 ---
 
 <nav
@@ -16,8 +16,14 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
         href="/"
         class="text-xl font-bold tracking-tight text-primary transition-colors hover:text-primary"
       >
-        {siteConfig.name}
-        <!-- <Image src={aELogo} alt={`${siteConfig.name} logo`} width={64} class="inline-block ml-2" /> -->
+        <!-- {siteConfig.name} -->
+        <Image
+          src={aELogo}
+          alt={`${siteConfig.name} logo`}
+          width={200}
+          height={42}
+          class="inline-block ml-2 mt-2 -mb-2"
+        />
       </a>
     </div>
 
