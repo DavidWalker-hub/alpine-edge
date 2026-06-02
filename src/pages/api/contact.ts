@@ -27,6 +27,10 @@ export const POST: APIRoute = async ({ request }) => {
     const resendApiKey = import.meta.env.RESEND_API_KEY;
     const toEmail = import.meta.env.CONTACT_TO_EMAIL;
     const fromEmail = import.meta.env.CONTACT_FROM_EMAIL;
+    console.log("resendApiKey", !!resendApiKey);
+    console.log("toEmail", !!toEmail);
+    console.log("fromEmail", !!fromEmail);
+
     if (!resendApiKey || !toEmail || !fromEmail) {
       return new Response(
         JSON.stringify({
