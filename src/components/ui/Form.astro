@@ -3,13 +3,13 @@ import Button from "./Button.astro";
 
 interface Props {
   action?: string;
-  method?: "GET" | "POST";
+  method?: "POST";
 }
 
-const { action = "#", method = "POST" } = Astro.props;
+const { action = "/api/contact", method = "POST" } = Astro.props;
 ---
 
-<form action={action} method={method} class="space-y-6">
+<form action={action} method={method} class="space-y-6" data-contact-form>
   <div>
     <label for="name" class="block text-sm font-medium text-foreground/80 mb-2"
       >Name</label
@@ -51,9 +51,74 @@ const { action = "#", method = "POST" } = Astro.props;
       class="block w-full rounded-xl border-border bg-muted/50 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 transition-all border outline-none focus:ring-4 resize-none"
       placeholder="How can we help you?"></textarea>
   </div>
+  <p
+    class="hidden rounded-xl border px-4 py-3 text-sm"
+    data-form-message
+    aria-live="polite"
+  >
+  </p>
   <div>
-    <Button type="submit" size="lg" class="w-full sm:w-auto">
+    <Button type="submit" size="lg" class="w-full sm:w-auto" data-submit-button>
       Send message
     </Button>
   </div>
 </form>
+
+<script>
+  const form = document.querySelector("[data-contact-form]");
+  const messageEl = document.querySelector("[data-form-message]");
+  const submitButton = document.querySelector("[data-submit-button]");
+
+  if (form instanceof HTMLFormElement && messageEl instanceof HTMLElement) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      messageEl.className = "hidden rounded-xl border px-4 py-3 text-sm";
+      messageEl.textContent = "";
+
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+      }
+
+      try {
+        const formData = new FormData(form);
+
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        messageEl.textContent = result.message || "Something went wrong.";
+        messageEl.classList.remove("hidden");
+
+        if (response.ok && result.ok) {
+          messageEl.classList.add(
+            "border-green-200",
+            "bg-green-50",
+            "text-green-800",
+          );
+          form.reset();
+        } else {
+          messageEl.classList.add(
+            "border-red-200",
+            "bg-red-50",
+            "text-red-800",
+          );
+        }
+      } catch (error) {
+        console.log("error", error);
+        messageEl.textContent = "Something went wrong. Please try again.";
+        messageEl.classList.remove("hidden");
+        messageEl.classList.add("border-red-200", "bg-red-50", "text-red-800");
+      } finally {
+        if (submitButton instanceof HTMLButtonElement) {
+          submitButton.disabled = false;
+          submitButton.textContent = "Send message";
+        }
+      }
+    });
+  }
+</script>

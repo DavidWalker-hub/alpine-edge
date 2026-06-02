@@ -1,13 +1,16 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import remarkReadingTime from "remark-reading-time";
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
   site: "https://astrostarterpro.com/",
   integrations: [sitemap(), icon(), mdx()],
+
   markdown: {
     remarkPlugins: [
       remarkReadingTime,
@@ -19,9 +22,10 @@ export default defineConfig({
       },
     ],
   },
+
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "es"],
+    locales: ["en"],
     routing: {
       prefixDefaultLocale: false,
     },
@@ -30,10 +34,14 @@ export default defineConfig({
     prefetchAll: true,
     defaultStrategy: "viewport",
   },
+
   build: {
     inlineStylesheets: "always",
   },
+
   vite: {
     plugins: [tailwindcss()],
   },
+
+  adapter: cloudflare(),
 });

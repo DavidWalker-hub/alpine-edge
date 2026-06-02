@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Alpine Edge",
   description:
     "A luxury ski and wellness retreat designed to take your skills to the next level.",
-  url: "https://alpineedge.com",
+  url: "https://alpineedge.ski",
   lang: "en",
   locale: "en_GB",
   author: "David Walker",
