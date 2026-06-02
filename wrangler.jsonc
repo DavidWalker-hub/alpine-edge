@@ -1,13 +1,14 @@
 {
-	"compatibility_date": "2026-06-02",
-	"compatibility_flags": ["global_fetch_strictly_public"],
-	"name": "alpine-edge",
-	"main": "@astrojs/cloudflare/entrypoints/server",
-	"assets": {
-		"directory": "./dist",
-		"binding": "ASSETS"
-	},
-	"observability": {
-		"enabled": true
-	}
+  "compatibility_date": "2026-06-02",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "name": "alpine-edge",
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_behavior": "404-page",
+  },
+  "observability": {
+    "enabled": true,
+  },
 }
