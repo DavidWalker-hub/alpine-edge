@@ -65,6 +65,11 @@ const { action = "/api/contact", method = "POST" } = Astro.props;
 </form>
 
 <script>
+  type ContactFormResponse = {
+    ok: boolean;
+    message: string;
+  };
+
   const form = document.querySelector("[data-contact-form]");
   const messageEl = document.querySelector("[data-form-message]");
   const submitButton = document.querySelector("[data-submit-button]");
@@ -89,7 +94,7 @@ const { action = "/api/contact", method = "POST" } = Astro.props;
           body: formData,
         });
 
-        const result = await response.json();
+        const result = (await response.json()) as ContactFormResponse;
 
         messageEl.textContent = result.message || "Something went wrong.";
         messageEl.classList.remove("hidden");

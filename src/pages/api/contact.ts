@@ -1,5 +1,6 @@
 import type { APIRoute } from "astro";
 import { Resend } from "resend";
+import { env } from "cloudflare:workers";
 
 export const prerender = false;
 
@@ -24,9 +25,9 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    const resendApiKey = import.meta.env.RESEND_API_KEY;
-    const toEmail = import.meta.env.CONTACT_TO_EMAIL;
-    const fromEmail = import.meta.env.CONTACT_FROM_EMAIL;
+    const resendApiKey = env.RESEND_API_KEY;
+    const toEmail = env.CONTACT_TO_EMAIL;
+    const fromEmail = env.CONTACT_FROM_EMAIL;
     console.log("resendApiKey", !!resendApiKey);
     console.log("toEmail", !!toEmail);
     console.log("fromEmail", !!fromEmail);
