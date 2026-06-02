@@ -1,7 +1,8 @@
 ---
 import type { Page } from "astro";
 import type { CollectionEntry } from "astro:content";
-import { Icon } from "astro-icon/components";
+import ArrowLeftIcon from "../icons/ArrowLeftIcon.astro";
+import ArrowRightIcon from "../icons/ArrowRightIcon.astro";
 
 export interface Props {
   page: Page<CollectionEntry<"blog">>;
@@ -21,7 +22,7 @@ const { prev, next } = url;
           href={prev}
           class="inline-flex items-center px-4 py-2 text-sm font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-muted hover:text-foreground transition-colors"
         >
-          <Icon name="tabler:arrow-left" class="w-4 h-4 mr-2" />
+          <ArrowLeftIcon class="w-4 h-4 mr-2" />
           Previous
         </a>
       ) : (
@@ -36,7 +37,7 @@ const { prev, next } = url;
           class="inline-flex items-center px-4 py-2 text-sm font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-muted hover:text-foreground transition-colors"
         >
           Next
-          <Icon name="tabler:arrow-right" class="w-4 h-4 ml-2" />
+          <ArrowRightIcon class="w-4 h-4 ml-2" />
         </a>
       ) : (
         <span />

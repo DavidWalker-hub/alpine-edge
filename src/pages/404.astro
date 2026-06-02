@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Hero from "@/components/widgets/Hero.astro";
+import HomeIcon from "@/components/icons/HomeIcon.astro";
+import PhoneIcon from "@/components/icons/PhoneIcon.astro";
 
 const metadata = {
   title: "404 - Page Not Found",
@@ -18,13 +20,13 @@ const metadata = {
         variant: "primary",
         text: "Back to Home",
         href: "/",
-        icon: "lucide:home",
+        icon: HomeIcon,
       },
       {
         variant: "secondary",
         text: "Contact",
         href: "/contact",
-        icon: "lucide:phone",
+        icon: PhoneIcon,
       },
     ]}
   />

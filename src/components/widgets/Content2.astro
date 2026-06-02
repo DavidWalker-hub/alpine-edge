@@ -1,10 +1,10 @@
 ---
 import WidgetWrapper from "./WidgetWrapper.astro";
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import Headline from "@/components/ui/Headline.astro";
 import Button from "@/components/ui/Button.astro";
 import type { ContentProps } from "@/types/types";
+import TablerCheckIcon from "@/components/icons/TablerCheckIcon.astro";
 
 const {
   title,
@@ -64,7 +64,7 @@ const {
               ({
                 title: titleItem,
                 description: descriptionItem,
-                icon,
+                icon: IconComponent,
                 iconClass,
               }) => (
                 <div class="flex">
@@ -72,10 +72,10 @@ const {
                     <div
                       class={`flex items-center justify-center w-10 h-10 rounded-full ${iconClass ? iconClass : "bg-primary/10 text-primary"}`}
                     >
-                      {icon ? (
-                        <Icon name={icon} class="w-5 h-5" />
+                      {IconComponent ? (
+                        <IconComponent class="w-5 h-5" />
                       ) : (
-                        <Icon name="tabler:check" class="w-5 h-5" />
+                        <TablerCheckIcon class="w-5 h-5" />
                       )}
                     </div>
                   </div>
@@ -98,19 +98,22 @@ const {
       {
         Array.isArray(actions) && actions.length > 0 && (
           <div class="mt-8 flex flex-col sm:flex-row gap-4">
-            {actions.map((action) => (
-              <Button
-                href={action.href}
-                variant={action.variant as "primary" | "secondary"}
-                aria-label={action.ariaLabel}
-                class="w-full sm:w-auto"
-              >
-                {action.icon && (
-                  <Icon name={action.icon} class="w-5 h-5 mr-2 -ml-1" />
-                )}
-                {action.text}
-              </Button>
-            ))}
+            {actions.map((action) => {
+              const IconComponent = action.icon;
+              return (
+                <Button
+                  href={action.href}
+                  variant={action.variant as "primary" | "secondary"}
+                  aria-label={action.ariaLabel}
+                  class="w-full sm:w-auto"
+                >
+                  {IconComponent && (
+                    <IconComponent class="w-5 h-5 mr-2 -ml-1" />
+                  )}
+                  {action.text}
+                </Button>
+              );
+            })}
           </div>
         )
       }

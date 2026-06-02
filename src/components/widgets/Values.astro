@@ -3,7 +3,6 @@ import WidgetWrapper from "./WidgetWrapper.astro";
 import type { ValuesProps } from "@/types/types";
 import Card from "@/components/ui/Card.astro";
 import Headline from "@/components/ui/Headline.astro";
-import { Icon } from "astro-icon/components";
 
 const {
   items = [],
@@ -44,17 +43,20 @@ const gridCols = {
   />
   <div class={`grid ${gridCols[columns]} gap-8 text-left`}>
     {
-      items.map((item) => (
-        <Card>
-          {item.icon && (
-            <div class="mb-4 text-primary text-4xl">
-              <Icon name={item.icon} class="w-12 h-12" />
-            </div>
-          )}
-          <h3 class="text-xl font-bold text-foreground mb-2">{item.title}</h3>
-          <p class="text-sm text-muted-foreground">{item.description}</p>
-        </Card>
-      ))
+      items.map((item) => {
+        const IconComponent = item.icon;
+        return (
+          <Card>
+            {IconComponent && (
+              <div class="mb-4 text-primary text-4xl">
+                <IconComponent class="w-12 h-12" />
+              </div>
+            )}
+            <h3 class="text-xl font-bold text-foreground mb-2">{item.title}</h3>
+            <p class="text-sm text-muted-foreground">{item.description}</p>
+          </Card>
+        );
+      })
     }
   </div>
 </WidgetWrapper>

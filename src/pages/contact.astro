@@ -3,6 +3,9 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Features from "@/components/widgets/Features.astro";
 import Content from "@/components/widgets/Content.astro";
 import Form from "@/components/ui/Form.astro";
+import PhoneIcon from "@/components/icons/PhoneIcon.astro";
+import MailIcon from "@/components/icons/MailIcon.astro";
+import LocationIcon from "@/components/icons/LocationIcon.astro";
 
 const metadata = {
   title: "Contact",
@@ -30,19 +33,19 @@ const visionText = [
       {
         title: "Phone",
         description: "+44 7540 470 338",
-        icon: "lucide:phone",
+        icon: PhoneIcon,
         iconClass: "bg-green-500/10 text-green-400",
       },
       {
         title: "Email",
         description: "david@alpineedge.ski",
-        icon: "lucide:mail",
+        icon: MailIcon,
         iconClass: "bg-yellow-500/10 text-yellow-400",
       },
       {
         title: "Location",
         description: "Val d'Isère, France",
-        icon: "lucide:map-pin",
+        icon: LocationIcon,
         iconClass: "bg-red-500/10 text-red-400",
       },
     ]}

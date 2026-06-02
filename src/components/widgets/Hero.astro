@@ -3,7 +3,6 @@ import WidgetWrapper from "./WidgetWrapper.astro";
 import type { HeroProps } from "@/types/types";
 import Headline from "@/components/ui/Headline.astro";
 import Button from "@/components/ui/Button.astro";
-import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
 const {
@@ -19,7 +18,6 @@ const {
   bg = await Astro.slots.render("bg"),
   animate = false,
 } = Astro.props as HeroProps;
-//   mt-64 sm:mt-32 md:mt-42 lg:mt-64
 const { container: containerClassProp = "" } = classes;
 ---
 
@@ -86,20 +84,25 @@ const { container: containerClassProp = "" } = classes;
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           {Array.isArray(actions) &&
             actions.length > 0 &&
-            actions.map((action) => (
-              <Button
-                href={action.href}
-                variant={action.variant as "primary" | "secondary"}
-                size="lg"
-                aria-label={action.ariaLabel}
-                class="w-full sm:w-auto"
-              >
-                {action.icon && (
-                  <Icon name={action.icon} class="w-5 h-5 mr-2 -ml-1" />
-                )}
-                {action.text}
-              </Button>
-            ))}
+            actions.map((action) => {
+              const IconComponent = action.icon;
+              return (
+                <Button
+                  href={action.href}
+                  variant={action.variant as "primary" | "secondary"}
+                  size="lg"
+                  aria-label={action.ariaLabel}
+                  class="w-full sm:w-auto"
+                >
+                  <span class="inline-flex items-center gap-2">
+                    {action.text}
+                    {IconComponent && (
+                      <IconComponent class="w-5 h-5 mr-2 ml-5" />
+                    )}
+                  </span>
+                </Button>
+              );
+            })}
         </div>
       </div>
       <slot />

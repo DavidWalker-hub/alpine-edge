@@ -2,14 +2,14 @@ export interface CallToAction {
   text: string;
   href: string;
   variant?: "primary" | "secondary" | "link";
-  icon?: string;
+  icon?: AstroComponentFactory;
   ariaLabel?: string;
 }
 
 export interface Feature {
   title: string;
   description: string;
-  icon?: string;
+  icon?: AstroComponentFactory;
   iconClass?: string;
 }
 
@@ -18,7 +18,7 @@ export type Value = Feature;
 export interface Service {
   title: string;
   description: string;
-  icon: string;
+  icon: AstroComponentFactory;
 }
 
 export interface NavLink {

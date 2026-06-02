@@ -6,7 +6,7 @@
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    "not_found_behavior": "404-page",
+    "not_found_handling": "404-page",
   },
   "observability": {
     "enabled": true,

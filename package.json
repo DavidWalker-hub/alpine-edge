@@ -28,7 +28,6 @@
     "@iconify-json/lucide": "^1.2.99",
     "@iconify-json/tabler": "^1.2.32",
     "@tailwindcss/vite": "^4.2.2",
-    "@vercel/analytics": "^2.0.1",
     "astro": "^6.3.6",
     "astro-icon": "^1.1.5",
     "remark-reading-time": "^2.1.0",

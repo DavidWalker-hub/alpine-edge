@@ -2,14 +2,13 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
-import icon from "astro-icon";
 import remarkReadingTime from "remark-reading-time";
 
 import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
   site: "https://astrostarterpro.com/",
-  integrations: [sitemap(), icon(), mdx()],
+  integrations: [sitemap(), mdx()],
 
   markdown: {
     remarkPlugins: [
