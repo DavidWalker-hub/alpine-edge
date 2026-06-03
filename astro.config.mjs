@@ -7,7 +7,7 @@ import remarkReadingTime from "remark-reading-time";
 import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
-  site: "https://astrostarterpro.com/",
+  site: "https://alpineedge.ski/",
   integrations: [sitemap(), mdx()],
 
   markdown: {
@@ -42,5 +42,10 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   output: "static",
-  adapter: cloudflare({ imageService: "compile" }),
+  adapter: cloudflare({
+    imageService: { build: "compile", runtime: "passthrough" },
+  }),
+  devToolbar: {
+    enabled: false,
+  },
 });
