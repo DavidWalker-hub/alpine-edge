@@ -1,4 +1,4 @@
-import ogImage from "@/assets/og-image.png";
+import ogImage from "@/assets/og-image-v2.png";
 
 export const siteConfig = {
   name: "Alpine Edge",
