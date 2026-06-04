@@ -20,7 +20,7 @@ export const siteConfig = {
     { text: "About", href: "/about" },
     // { text: "Services", href: "/services" },
     { text: "Team", href: "/team" },
-    // { text: "Blog", href: "/blog" },
+    { text: "Blog", href: "/blog" },
     { text: "Contact", href: "/contact" },
     // { text: "Widgets", href: "/widgets" },
   ],
