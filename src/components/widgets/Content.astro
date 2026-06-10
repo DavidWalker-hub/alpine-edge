@@ -17,7 +17,11 @@ const {
   bg = await Astro.slots.render("bg"),
 } = Astro.props as ContentProps;
 
-const { container: containerClassProp = "", ...otherClasses } = classes;
+const {
+  container: containerClassProp = "",
+  image: imageClassProp = "",
+  ...otherClasses
+} = classes;
 ---
 
 <WidgetWrapper
@@ -44,7 +48,7 @@ const { container: containerClassProp = "", ...otherClasses } = classes;
         <Image
           src={image}
           alt={imageAlt}
-          class="rounded-3xl shadow-2xl mx-auto mt-6 border border-border/50 aspect-video object-cover"
+          class={`rounded-3xl shadow-2xl mx-auto mt-6 border border-border/50 aspect-video object-cover ${imageClassProp}`}
         />
       )
     }

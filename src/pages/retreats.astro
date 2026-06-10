@@ -1,0 +1,68 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ServiceList from "@/components/widgets/ServiceList.astro";
+import Content from "@/components/widgets/Content.astro";
+import Content2 from "@/components/widgets/Content2.astro";
+import GlobeIcon from "@/components/icons/TravelIcon.astro";
+import BedIcon from "@/components/icons/BedIcon.astro";
+import CalendarIcon from "@/components/icons/CalendarIcon.astro";
+import ChairliftImage from "@/assets/images/skiing/chairlift2.png";
+
+const services = [
+  {
+    title: "What's included",
+    description:
+      "Book your flights and let us handle the rest. We take care of everything from airport transfers to ski passes, coaching and accommodation.",
+    icon: GlobeIcon,
+  },
+  {
+    title: "Accommodation options",
+    description:
+      "All of our chalets have been carefully selected to provide the best experience possible. The layout and prices of each can vary so please get in touch for more details.",
+    icon: BedIcon,
+  },
+  {
+    title: "Dates & pricing",
+    description:
+      "Alpine Edge is an exclusive experience with limited availability. We run a number of retreats throughout the season, with prices varying based on the chalet and time of season. Please get in touch for more details.",
+    icon: CalendarIcon,
+  },
+];
+const metadata = {
+  title: "Retreats",
+  description:
+    "Discover more about our ski retreats, whats included and what options are available to you.",
+};
+---
+
+<BaseLayout {metadata}>
+  <Content
+    tagline="Retreats"
+    title="Our Retreats"
+    description={[
+      "Discover more about our ski retreats, whats included and what options are available to you.",
+    ]}
+  />
+  <ServiceList
+    services={services}
+    classes={{ container: "pt-0 md:pt-0", grid: "md:grid-cols-3" }}
+  />
+  <Content2
+    tagline="Details"
+    title="Retreat details"
+    description={[
+      "Planning a trip can be overwhelming, but we are here to make it as seamless as possible.",
+      "Alpine Edge will organise your airport transfers, ski passes, coaching and accommodation. Our private chef will cater for the week with days off organised to allow you to experience the finest cuisine in Val D'isère.",
+      "<br/>Ski hire is not included as we know many keen skiers will have their own equipment. However, for those without, we are happy to organise ski hire. At Alpine Edge we believe the greatest improvement can be made on the piste so we strongly encourage our guests to attend the course on a piste dedicated ski.",
+      "Off piste is an option if the conditions allow and suitable skis can be organised at the time.",
+      "<br/>Alpine Edge retreats are all one week and run during the quietest weeks of the season. This ensures we can make the most of our time on the mountain and take your skiing to the next level.",
+    ]}
+    classes={{
+      container: "pt-5 md:pt-2",
+      image: "object-[90%_40%_]",
+    }}
+    image={ChairliftImage}
+    imageAlt="Ski chairlift with a mountain backdrop in Val d'Isere"
+    isReversed
+  />
+</BaseLayout>

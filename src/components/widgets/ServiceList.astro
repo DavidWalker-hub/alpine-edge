@@ -15,7 +15,11 @@ const {
   bg = await Astro.slots.render("bg"),
 } = Astro.props as ServiceListProps;
 
-const { container: containerClassProp = "", ...otherClasses } = classes;
+const {
+  container: containerClassProp = "",
+  grid: gridClassProp = "",
+  ...otherClasses
+} = classes;
 ---
 
 <WidgetWrapper
@@ -33,7 +37,7 @@ const { container: containerClassProp = "", ...otherClasses } = classes;
       container: "max-w-3xl mx-auto text-center",
     }}
   />
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class={`grid ${gridClassProp} grid-cols-1 gap-8 `}>
     {
       services.map((s) => {
         const IconComponent = s.icon;
@@ -50,12 +54,6 @@ const { container: containerClassProp = "", ...otherClasses } = classes;
               <p class="text-muted-foreground leading-relaxed">
                 {s.description}
               </p>
-              <button class="mt-8 text-primary font-semibold flex items-center gap-2 group/btn hover:underline transition-all">
-                View details
-                <span class="transition-transform group-hover/btn:translate-x-1">
-                  →
-                </span>
-              </button>
             </div>
           </Card>
         );
