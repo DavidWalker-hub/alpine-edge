@@ -11,9 +11,7 @@ export const siteConfig = {
   twitter: "@N/A",
   ogImage: ogImage,
   socialLinks: {
-    twitter: "https://twitter.com",
-    github: "https://github.com/DavidWalker-hub/alpine-edge",
-    discord: "https://discord.com",
+    instagram: "https://www.instagram.com/alpineedge_/",
   },
   navLinks: [
     { text: "Home", href: "/" },
@@ -22,6 +20,5 @@ export const siteConfig = {
     { text: "Retreats", href: "/retreats" },
     { text: "Blog", href: "/blog" },
     { text: "Contact", href: "/contact" },
-    // { text: "Widgets", href: "/widgets" },
   ],
 };
