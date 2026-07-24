@@ -11,6 +11,8 @@ export interface Feature {
   description: string;
   icon?: AstroComponentFactory;
   iconClass?: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
 }
 
 export type Value = Feature;
