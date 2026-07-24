@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from "@/config/site";
+import InstagramIcon from "../icons/InstagramIcon.astro";
 ---
 
 <footer class="mt-20 border-t border-border bg-card">
@@ -11,33 +12,19 @@ import { siteConfig } from "@/config/site";
           {siteConfig.description}
         </p>
       </div> -->
-    <!-- <div class="flex items-center gap-6">
-        <a
-          href={siteConfig.socialLinks.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-foreground transition-colors hover:text-primary"
-          >Twitter</a
-        >
-        <a
-          href={siteConfig.socialLinks.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-foreground transition-colors hover:text-primary"
-          >GitHub</a
-        >
-        <a
-          href={siteConfig.socialLinks.discord}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-foreground transition-colors hover:text-primary"
-          >Discord</a
-        >
-      </div> -->
+    <div class="flex items-center justify-center gap-6">
+      <a
+        href={siteConfig.socialLinks.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-muted-foreground transition-colors hover:text-primary"
+        ><InstagramIcon /></a
+      >
+    </div>
     <!-- </div> -->
-    <div class="mt-2 pt-2 text-center text-xs text-muted-foreground">
+    <div class="mt-6 pt-2 text-center text-xs text-muted-foreground">
       &copy; 2026
-      {siteConfig.author}. All rights reserved.
+      {siteConfig.name}. All rights reserved.
     </div>
   </div>
 </footer>

@@ -7,6 +7,9 @@ import carvingImg from "@/assets/images/skiing/carving2DW.jpg";
 import Content2 from "@/components/widgets/Content2.astro";
 import powderSprayImage from "@/assets/images/powderSpray.jpg";
 import accom1 from "@/assets/images/accom/accom1.webp";
+import accomG2 from "@/assets/images/accom/accomG2.png";
+import yogaImage from "@/assets/images/accom/yogaSauna.png";
+import clinic from "@/assets/images/skiing/clinic.png";
 import SkiIcon from "@/components/icons/SkiIcon.astro";
 import HouseIcon from "@/components/icons/HouseIcon.astro";
 import WellnessIcon from "@/components/icons/WellnessIcon.astro";
@@ -42,22 +45,24 @@ const metadata = {
         title: "Ski clinics",
         description:
           "Professional ski instruction from instructors with the highest certification.",
-        icon: SkiIcon,
-        iconClass: "bg-blue-500/10 text-blue-400",
+        image: clinic,
+        imageAlt:
+          "Image of a ski instructor providing coaching to a group of skiers",
       },
       {
         title: "Luxury accommodation",
         description:
           "Stay in the most luxurious chalets complete with spa and gourmet dining.",
-        icon: HouseIcon,
-        iconClass: "bg-teal-500/10 text-teal-400",
+        image: accomG2,
+        imageAlt:
+          "Image of the exterior of a luxury chalet in Val d'Isere, France, showcasing its architectural design and surrounding snowy landscape.",
       },
       {
         title: "Après-ski reimagined",
         description:
           "Apres ski designed to maximise your performance includes video feedback sessions, sauna & ice bath and stretching.",
-        icon: WellnessIcon,
-        iconClass: "bg-pink-500/10 text-pink-400",
+        image: yogaImage,
+        imageAlt: "Image of a yoga matt laid out next to a hot tub and sauna.",
       },
     ]}
   />
