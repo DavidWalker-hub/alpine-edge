@@ -6,12 +6,11 @@ import Features from "@/components/widgets/Features.astro";
 import carvingImg from "@/assets/images/skiing/carving2DW.jpg";
 import Content2 from "@/components/widgets/Content2.astro";
 import powderSprayImage from "@/assets/images/powderSpray.jpg";
-import accom1 from "@/assets/images/accom/accom1.webp";
-import accomG2 from "@/assets/images/accom/accomG2.png";
-import yogaImage from "@/assets/images/accom/yogaSauna.png";
+import yseChalet from "@/assets/images/accom/yseChalet.jpg";
+import yseChalet2 from "@/assets/images/accom/yseChalet2.jpg";
+import yseSauna from "@/assets/images/accom/yseSauna.jpg";
 import clinic from "@/assets/images/skiing/clinic.png";
 import SkiIcon from "@/components/icons/SkiIcon.astro";
-import HouseIcon from "@/components/icons/HouseIcon.astro";
 import WellnessIcon from "@/components/icons/WellnessIcon.astro";
 import UserGroupIcon from "@/components/icons/UserGroupIcon.astro";
 import BedIcon from "@/components/icons/BedIcon.astro";
@@ -42,27 +41,28 @@ const metadata = {
     subtitle="Alpine Edge is designed for people seeking to take their skiing to the highest level."
     features={[
       {
-        title: "Ski clinics",
+        title: "Intentional Coaching",
         description:
-          "Professional ski instruction from instructors with the highest certification.",
+          "A full week of expert coaching, on and off the snow, designed to elevate your skiing through purposeful practice, video analysis and personalisedfeedback.",
         image: clinic,
         imageAlt:
           "Image of a ski instructor providing coaching to a group of skiers",
       },
       {
-        title: "Luxury accommodation",
+        title: "Your Home in the Alps",
         description:
-          "Stay in the most luxurious chalets complete with spa and gourmet dining.",
-        image: accomG2,
+          "Beautiful alpine chalets, exceptional food and spaces designed for rest, recovery and connection after unforgettable days in the mountains.",
+        image: yseChalet,
         imageAlt:
-          "Image of the exterior of a luxury chalet in Val d'Isere, France, showcasing its architectural design and surrounding snowy landscape.",
+          "Image of the interior lounge and dining area of a luxury chalet in Val d'Isere, France. The Chalet is called Chalet d'Isére run by the company YSE.",
       },
       {
-        title: "Après-ski reimagined",
+        title: "Performance Beyond the Slopes",
         description:
-          "Apres ski designed to maximise your performance includes video feedback sessions, sauna & ice bath and stretching.",
-        image: yogaImage,
-        imageAlt: "Image of a yoga matt laid out next to a hot tub and sauna.",
+          "Recovery is part of the journey. Mobility, sauna, cold therapy and nutrition ensure you wake up ready to make the most of every day.",
+        image: yseSauna,
+        imageAlt:
+          "Image of a beautiful sauna with towels and coals ready to be used.",
       },
     ]}
   />
@@ -124,8 +124,8 @@ const metadata = {
         iconClass: "bg-pink-500/10 text-pink-400",
       },
     ]}
-    image={accom1}
-    imageAlt="Community and Open Source"
+    image={yseChalet2}
+    imageAlt="An image of the interior lounge and dining area of a luxury chalet in Val d'Isere, France. The Chalet is called Chalet d'Isére run by the company YSE."
     isReversed={true}
   >
     <Fragment>
