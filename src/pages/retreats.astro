@@ -1,33 +1,104 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import ServiceList from "@/components/widgets/ServiceList.astro";
+import Pricing from "@/components/widgets/Pricing.astro";
 import Content from "@/components/widgets/Content.astro";
 import Content2 from "@/components/widgets/Content2.astro";
-import GlobeIcon from "@/components/icons/TravelIcon.astro";
-import BedIcon from "@/components/icons/BedIcon.astro";
-import CalendarIcon from "@/components/icons/CalendarIcon.astro";
-import ChairliftImage from "@/assets/images/skiing/chairlift2.png";
+import TravelIcon from "@/components/icons/TravelIcon.astro";
+import SkiIcon from "@/components/icons/SkiIcon.astro";
+import HouseIcon from "@/components/icons/HouseIcon.astro";
+import VanIcon from "@/components/icons/VanIcon.astro";
+import ChefIcon from "@/components/icons/ChefIcon.astro";
+import UserGroupIcon from "@/components/icons/UserGroupIcon.astro";
+import WellnessIcon from "@/components/icons/WellnessIcon.astro";
+import LaptopVideoIcon from "@/components/icons/LaptopVideoIcon.astro";
+import CameraIcon from "@/components/icons/CameraIcon.astro";
+import YogaIcon from "@/components/icons/YogaIcon.astro";
+import UserSingleIcon from "@/components/icons/UserSingleIcon.astro";
+import UserMultipleIcon from "@/components/icons/UserMultipleIcon.astro";
+import yseRoom from "@/assets/images/accom/yseRoom.jpg";
+import Features from "@/components/widgets/Features.astro";
 
-const services = [
+const roomOptions = [
   {
-    title: "What's included",
+    title: "Standard",
+    roomType: "Shared Twin or Double Room",
     description:
-      "Book your flights and let us handle the rest. We take care of everything from airport transfers to ski passes, coaching and accommodation.",
-    icon: GlobeIcon,
+      "A shared room with one other guest, with a choice of twin or double bed.",
+    price: "£5,650",
+    icon: UserMultipleIcon,
   },
   {
-    title: "Accommodation options",
-    description:
-      "All of our chalets have been carefully selected to provide the best experience possible. The layout and prices of each can vary so please get in touch for more details.",
-    icon: BedIcon,
-  },
-  {
-    title: "Dates & pricing",
-    description:
-      "Alpine Edge is an exclusive experience with limited availability. We run a number of retreats throughout the season, with prices varying based on the chalet and time of season. Please get in touch for more details.",
-    icon: CalendarIcon,
+    title: "Private",
+    roomType: "Private Room",
+    description: "A spacious room with premium amenities and stunning views.",
+    price: "£6,250",
+    icon: UserSingleIcon,
   },
 ];
+
+const features = [
+  {
+    description: "6 Days Expert Ski Coaching",
+    icon: SkiIcon,
+    iconClass: "bg-card text-primary",
+    centerIcon: true,
+  },
+  {
+    description: "7 Nights Luxury Chalet Accommodation",
+    icon: HouseIcon,
+    iconClass: "bg-card text-primary",
+    centerIcon: true,
+  },
+  {
+    description: "Airport Transfers",
+    icon: VanIcon,
+    iconClass: "bg-card text-primary",
+    centerIcon: true,
+  },
+  {
+    description: "Breakfast, Afternoon Tea and Evening Meals",
+    icon: ChefIcon,
+    iconClass: "bg-card text-primary",
+    centerIcon: true,
+  },
+  {
+    description: "Small Group Coaching Max 5 Skiers",
+    icon: UserGroupIcon,
+    iconClass: "bg-card text-primary",
+    centerIcon: true,
+  },
+  {
+    description: "Sauna, Ice Bath and Jacuzzi",
+    icon: WellnessIcon,
+    iconClass: "bg-card text-primary",
+    centerIcon: true,
+  },
+  {
+    description: "Stretching and Mobility Sessions",
+    icon: YogaIcon,
+    iconClass: "bg-card text-primary",
+    centerIcon: true,
+  },
+  {
+    description: "Video Analysis from Your Coach",
+    icon: LaptopVideoIcon,
+    iconClass: "bg-card text-primary",
+    centerIcon: true,
+  },
+  {
+    description: "Professional Photography and Video",
+    icon: CameraIcon,
+    iconClass: "bg-card text-primary",
+    centerIcon: true,
+  },
+  {
+    description: "6 Day Ski Pass",
+    icon: TravelIcon,
+    iconClass: "bg-card text-primary",
+    centerIcon: true,
+  },
+];
+
 const metadata = {
   title: "Retreats",
   description:
@@ -43,26 +114,25 @@ const metadata = {
       "Discover more about our ski retreats, whats included and what options are available to you.",
     ]}
   />
-  <ServiceList
-    services={services}
-    classes={{ container: "pt-0 md:pt-0", grid: "md:grid-cols-3" }}
-  />
   <Content2
-    tagline="Details"
-    title="Retreat details"
+    tagline="Upcoming Retreats"
+    title="Winter 2026 - 2027"
     description={[
-      "Planning a trip can be overwhelming, but we are here to make it as seamless as possible.",
-      "Alpine Edge will organise your airport transfers, ski passes, coaching and accommodation. Our private chef will cater for the week with days off organised to allow you to experience the finest cuisine in Val D'isère.",
-      "<br/>Ski hire is not included as we know many keen skiers will have their own equipment. However, for those without, we are happy to organise ski hire. At Alpine Edge we believe the greatest improvement can be made on the piste so we strongly encourage our guests to attend the course on a piste dedicated ski.",
-      "Off piste is an option if the conditions allow and suitable skis can be organised at the time.",
-      "<br/>Alpine Edge retreats are all one week and run during the quietest weeks of the season. This ensures we can make the most of our time on the mountain and take your skiing to the next level.",
+      "Alpine Edge is excited to announce our retreat for the 26 -27 winter season will take place in Val d'Isère, France. The retreat will run from the 7th - 14th of February 2027, staying in the beautiful Chalet Isère.",
     ]}
-    classes={{
-      container: "pt-5 md:pt-2",
-      image: "object-[90%_40%_]",
-    }}
-    image={ChairliftImage}
-    imageAlt="Ski chairlift with a mountain backdrop in Val d'Isere"
-    isReversed
+    image={yseRoom}
+    imageAlt="One of the bedrooms in the chalet Isère in the french ski resort of Val d'Isere"
+  />
+  <Pricing
+    tagline="options"
+    roomOptions={roomOptions}
+    title="Investment"
+    description={["Choose the accommodation option that best suits your stay."]}
+  />
+  <Features
+    tagline="Included"
+    title="Every Booking Includes"
+    classes={{ grid: "grid-cols-2 md:grid-cols-4", card: "text-center" }}
+    features={features}
   />
 </BaseLayout>

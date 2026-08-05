@@ -16,7 +16,12 @@ const {
   bg = await Astro.slots.render("bg"),
 } = Astro.props as FeaturesProps;
 
-const { container: containerClassProp = "", ...otherClasses } = classes;
+const {
+  container: containerClassProp = "",
+  grid: gridClassProp = "grid-cols-1 md:grid-cols-3",
+  card: cardClassProp = "",
+  ...otherClasses
+} = classes;
 ---
 
 <WidgetWrapper
@@ -34,15 +39,16 @@ const { container: containerClassProp = "", ...otherClasses } = classes;
       container: "max-w-3xl mx-auto text-center",
     }}
   />
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class={`grid ${gridClassProp} gap-8`}>
     {
       features.map((feature) => {
         const IconComponent = feature.icon;
         const image = feature.image;
         const imageAlt = feature.imageAlt;
+        const centerIcon = feature.centerIcon || false;
 
         return (
-          <Card cardPadding={image ? "p-0" : "p-8"}>
+          <Card cardPadding={image ? "p-0" : "p-8"} class={`${cardClassProp}`}>
             {image && imageAlt && (
               <div class="w-full aspect-[6/3] rounded-t-lg overflow-hidden mb-2">
                 <Image
@@ -54,7 +60,7 @@ const { container: containerClassProp = "", ...otherClasses } = classes;
             )}
             {!image && IconComponent && (
               <div
-                class={`w-12 h-12 rounded-lg flex items-center justify-center mb-6 ${feature.iconClass ? feature.iconClass : "bg-primary/10 text-primary"}`}
+                class={`w-12 h-12 rounded-lg flex items-center justify-center mb-6 ${centerIcon ? "mx-auto" : ""} ${feature.iconClass ? feature.iconClass : "bg-primary/10 text-primary"}`}
               >
                 <IconComponent class="w-6 h-6" />
               </div>

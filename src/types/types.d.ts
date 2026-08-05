@@ -11,11 +11,20 @@ export interface Feature {
   description: string;
   icon?: AstroComponentFactory;
   iconClass?: string;
+  centerIcon?: boolean;
   image?: ImageMetadata;
   imageAlt?: string;
 }
 
 export type Value = Feature;
+
+export interface RoomOption {
+  price: number | string;
+  description: string[];
+  roomType: string;
+  title: string;
+  icon?: AstroComponentFactory;
+}
 
 export interface Service {
   title: string;
@@ -74,4 +83,9 @@ export interface ServiceListProps extends HeadlineProps {
 export interface ValuesProps extends HeadlineProps {
   items?: Value[];
   columns?: 1 | 2 | 3 | 4;
+}
+
+export interface PricingProps extends HeadlineProps {
+  roomOptions: RoomOption[];
+  description?: string[];
 }

@@ -1,0 +1,72 @@
+---
+import WidgetWrapper from "./WidgetWrapper.astro";
+import type { PricingProps } from "@/types/types";
+import Card from "@/components/ui/Card.astro";
+import Headline from "@/components/ui/Headline.astro";
+
+const {
+  title,
+  subtitle,
+  description = [],
+  tagline,
+  id,
+  roomOptions = [],
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render("bg"),
+} = Astro.props as PricingProps;
+
+const { container: containerClassProp = "", ...otherClasses } = classes;
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={` ${containerClassProp}`}
+  bg={bg}
+  classes={otherClasses}
+>
+  <Headline
+    title={title}
+    subtitle={subtitle ||
+      (Array.isArray(description) ? description.join(" ") : description)}
+    tagline={tagline}
+    classes={{
+      container: "max-w-3xl mx-auto text-center",
+    }}
+  />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+    {
+      roomOptions.map((roomOption) => {
+        const IconComponent = roomOption.icon;
+        return (
+          <Card
+            class={`p-5 flex flex-col gap-3 items-center justify-between text-center mx-auto text-foreground h-98 lg:w-98 max-w-98`}
+          >
+            {IconComponent && (
+              <div class={`text-primary `}>
+                <div class="flex justify-center">
+                  <IconComponent />
+                </div>
+
+                <h3 class="text-md text-primary tracking-widest">
+                  {roomOption.title}
+                </h3>
+              </div>
+            )}
+            <p>{roomOption.roomType}</p>
+            <hr class="w-2/5 text-center" />
+            <div>
+              <p>{roomOption.price}</p>
+              <p> per person</p>
+            </div>
+            <hr class="w-2/5 text-center" />
+            <p class={`text-sm text-muted-foreground`}>
+              {roomOption.description}
+            </p>
+          </Card>
+        );
+      })
+    }
+  </div>
+</WidgetWrapper>
