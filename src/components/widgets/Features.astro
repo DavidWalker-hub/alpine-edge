@@ -46,9 +46,14 @@ const {
         const image = feature.image;
         const imageAlt = feature.imageAlt;
         const centerIcon = feature.centerIcon || false;
+        const href = feature.href || "";
 
         return (
-          <Card cardPadding={image ? "p-0" : "p-8"} class={`${cardClassProp}`}>
+          <Card
+            cardPadding={image ? "p-0" : "p-8"}
+            class={`${cardClassProp}`}
+            href={href}
+          >
             {image && imageAlt && (
               <div class="w-full aspect-[6/3] rounded-t-lg overflow-hidden mb-2">
                 <Image

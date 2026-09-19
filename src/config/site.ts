@@ -19,6 +19,6 @@ export const siteConfig = {
     { text: "Team", href: "/team" },
     { text: "Retreats", href: "/retreats" },
     { text: "Blog", href: "/blog" },
-    { text: "Contact", href: "/contact" },
+    { text: "Book", href: "/book" },
   ],
 };

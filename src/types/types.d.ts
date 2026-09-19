@@ -14,6 +14,7 @@ export interface Feature {
   centerIcon?: boolean;
   image?: ImageMetadata;
   imageAlt?: string;
+  href?: string;
 }
 
 export type Value = Feature;
